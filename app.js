@@ -4,7 +4,7 @@ const staticRoute = require("./routers/staticRouter");
 const historyRoute = require("./routers/history");
 const {connectToMongoDB} = require("./connect");
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const DB = "mongodb+srv://macsingh110:vCiXXlCLM56H3h3v@cluster0.sul3vtf.mongodb.net/NovaDataBase?retryWrites=true&w=majority"
 connectToMongoDB(DB).then(()=>{console.log("MongoDB connected")}).catch((err)=>{console.log(`ERR: ${err}`)});
 
